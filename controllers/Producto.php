@@ -29,5 +29,21 @@ class Producto extends CI_Controller {
 		echo json_encode($result);
 
 	}
+	
+	/**
+	 *
+	 *
+	 * By Alex
+	 */
+	public function buscarProductos(){
+
+		$buscar = $this->input->post('buscar');
+		$idempresa = $this->input->post('idempresa');
+
+		$result = $this->model_producto->buscarProductosBarcode($idempresa, $buscar);
+
+		echo json_encode($result);
+
+	}
 
 }
