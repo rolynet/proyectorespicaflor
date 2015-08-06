@@ -17,6 +17,11 @@ class Producto extends CI_Controller {
 
 	}
 
+	/**
+	 *
+	 *
+	 * By Jose
+	 */
 	public function listar(){
 
 		$result = $this->model_producto->listar();
