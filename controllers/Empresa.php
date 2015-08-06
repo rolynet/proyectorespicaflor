@@ -26,4 +26,19 @@ class Empresa extends CI_Controller {
 
 		echo json_encode($result);
 	}
+
+	/**
+	 *
+	 *
+	 * By RolyNet
+	 */
+	public function buscarEmpresas(){
+
+		$buscar = $this->input->post('buscar');
+
+		$result = $this->model_empresa->buscarEmpresas($buscar);
+
+		echo json_encode($result);
+	}
+	
 }
