@@ -1,8 +1,7 @@
 <?php 
 class Empresa extends CI_Controller {
 
-	public function __construct()
-    {
+	public function __construct(){
         parent::__construct();
         // Your own constructor code
         $this->load->model('model_empresa');
@@ -14,6 +13,11 @@ class Empresa extends CI_Controller {
 		echo "<pre>".print_r($result,true)."</pre>";
 	}
 
+	/**
+	 *
+	 *
+	 * By RolyNet
+	 */
 	public function buscarEmpresas(){
 
 		$buscar = $this->input->post('buscar');
@@ -24,6 +28,11 @@ class Empresa extends CI_Controller {
 	}
 
 
+	/**
+	 *
+	 *
+	 * By Jaime
+	 */
 	public function listar(){
 
 		$result = $this->model_empresa->listar();
