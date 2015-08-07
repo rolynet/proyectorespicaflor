@@ -11,27 +11,9 @@ class Empresa extends CI_Controller {
 	public function index()
 	{
 		$result = $this->model_empresa->listar();
-
-		echo json_encode($result);
+		echo "<pre>".print_r($result,true)."</pre>";
 	}
 
-	/**
-	 *
-	 *
-	 * By Jaime Castro
-	 */
-	public function listar(){
-
-		$result = $this->model_empresa->listar();
-
-		echo json_encode($result);
-	}
-
-	/**
-	 *
-	 *
-	 * By RolyNet
-	 */
 	public function buscarEmpresas(){
 
 		$buscar = $this->input->post('buscar');
@@ -40,5 +22,12 @@ class Empresa extends CI_Controller {
 
 		echo json_encode($result);
 	}
-	
+
+
+	public function listar(){
+
+		$result = $this->model_empresa->listar();
+
+		echo json_encode($result);
+	}
 }

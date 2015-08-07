@@ -23,20 +23,20 @@ class Producto extends CI_Controller {
 	 * By Jose
 	 */
 	public function listar(){
-
-		$result = $this->model_producto->listar();
+		$idempresa = $this->input->post('idempresa');
+		
+		$result = $this->model_producto->listar($idempresa);
 
 		echo json_encode($result);
 
 	}
-	
+
 	/**
 	 *
 	 *
 	 * By Alex
 	 */
 	public function buscarProductos(){
-
 		$buscar = $this->input->post('buscar');
 		$idempresa = $this->input->post('idempresa');
 
