@@ -4,9 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Producto extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-
 		$this->load->model('model_producto');
-
 	}
 
 	public function index(){
@@ -23,20 +21,20 @@ class Producto extends CI_Controller {
 	 * By Jose
 	 */
 	public function listar(){
-
-		$result = $this->model_producto->listar();
+		$idempresa = $this->input->post('idempresa');
+		
+		$result = $this->model_producto->listar($idempresa);
 
 		echo json_encode($result);
 
 	}
-	
+
 	/**
 	 *
 	 *
 	 * By Alex
 	 */
 	public function buscarProductos(){
-
 		$buscar = $this->input->post('buscar');
 		$idempresa = $this->input->post('idempresa');
 
